@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+  <div id="startScreen">
+    <h2>Welcome to the Quiz</h2>
+    <input type="text" id="userName" placeholder="Enter your name" />
+    <br>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <div class="container" id="quizContainer">
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-bar-fill" id="quizProgress"></div>
+    </div>
+    <div class="progress" id="progressBar"></div>
+    <div class="question">
+      <div id="questionText"></div>
+      <div class="timer" id="timer">10</div>
+    </div>
+    <div class="options" id="options"></div>
+    <button id="skipBtn" onclick="skipQuestion()">Skip</button>
+  </div>
+
+  <div class="results-modal" id="resultsModal" style="display:none">
+    <div class="results-content">
+      <h2>Your Score: <span id="scoreDisplay"></span>/15</h2>
+      <div class="stars" id="starRating"></div>
+      <div class="leaderboard">
+        <h3>Top 5 Scores</h3>
+        <ol id="topScores"></ol>
+      </div>
+      <button onclick="location.reload()">Play Again</button>
+      <button onclick="resetTopScores()">Reset Top 5</button>
+    </div>
+  </div>
+
+  <script>
+const questions = [
+  { q: "Which planet is known as the Red Planet?", o: ["Mars", "Venus", "Jupiter", "Saturn"], a: 0 },
+  { q: "Who is the current President of India (2025)?", o: ["Droupadi Murmu", "Narendra Modi", "Amit Shah", "Sonia Gandhi"], a: 0 },
+  { q: "What comes next in the sequence: 2, 4, 8, 16, ?", o: ["18", "24", "32", "20"], a: 2 },
+  { q: "Which part of a plant conducts photosynthesis?", o: ["Stem", "Roots", "Leaves", "Flowers"], a: 2 },
+  { q: "Which company owns the brand Audi?", o: ["BMW", "Volkswagen", "Ford", "Mercedes"], a: 1 },
+  { q: "Which is the largest planet?", o: ["Earth", "Mars", "Jupiter", "Saturn"], a: 2 },
+  { q: "Which Indian party uses the lotus as its symbol?", o: ["Congress", "BJP", "AAP", "CPI"], a: 1 },
+  { q: "If A=1, B=2, Z=?", o: ["24", "25", "26", "27"], a: 2 },
+  { q: "Which plant is known for healing burns?", o: ["Neem", "Tulsi", "Aloe Vera", "Rose"], a: 2 },
+  { q: "What car company makes the Mustang?", o: ["Ford", "Chevrolet", "Toyota", "Nissan"], a: 0 },
+  { q: "Which planet has rings?", o: ["Mars", "Saturn", "Venus", "Earth"], a: 1 },
+  { q: "Who is the Governor of RBI?", o: ["Shaktikanta Das", "Nirmala Sitharaman", "Raghuram Rajan", "Urijit Patel"], a: 0 },
+  { q: "What is 11 * 11?", o: ["111", "121", "131", "141"], a: 1 },
+  { q: "What part of plant is used in tea?", o: ["Root", "Leaf", "Flower", "Seed"], a: 1 },
+  { q: "What does SUV stand for?", o: ["Sport Utility Vehicle", "Standard Urban Vehicle", "Super User Van", "Speed Utility Van"], a: 0 }
+];
+    let current = 0, score = 0, countdown;
+    let userName = "";
+
+    function startQuiz() {
+      userName = document.getElementById("userName").value.trim();
+      if (!userName) {
+        alert("Please enter your name to start the quiz.");
+        return;
+      }
+      document.getElementById("startScreen").style.display = "none";
+      document.getElementById("quizContainer").style.display = "flex";
+      loadQuestion();
+    }
+
+    function updateProgressBar() {
+      const progressFill = document.getElementById("quizProgress");
+      const percent = ((current) / questions.length) * 100;
+      progressFill.style.width = `${percent}%`;
+    }
+
+    function startTimer() {
+      clearInterval(countdown);
+      let timeLeft = 10;
+      document.getElementById("timer").innerText = timeLeft;
+      document.getElementById("progressBar").style.animation = "none";
+      void document.getElementById("progressBar").offsetWidth;
+      document.getElementById("progressBar").style.animation = "progressAnim 10s linear forwards";
+
+      countdown = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").innerText = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          skipQuestion();
+        }
+      }, 1000);
+    }
+
+    function loadQuestion() {
+      if (current >= questions.length) return endQuiz();
+      updateProgressBar();
+      let q = questions[current];
+      document.getElementById("questionText").innerText = `Q${current + 1}. ${q.q}`;
+      const opts = document.getElementById("options");
+      opts.innerHTML = "";
+      q.o.forEach((opt, idx) => {
+        const div = document.createElement("div");
+        div.className = "option";
+        div.innerText = opt;
+        div.onclick = () => {
+          clearInterval(countdown);
+          if (idx === q.a) {
+            div.classList.add("correct");
+            score++;
+          } else {
+            div.classList.add("incorrect");
+            opts.children[q.a].classList.add("correct");
+          }
+          Array.from(opts.children).forEach(opt => opt.onclick = null);
+          setTimeout(nextQuestion, 1000);
+        };
+        opts.appendChild(div);
+      });
+      startTimer();
+    }
+
+    function skipQuestion() {
+      clearInterval(countdown);
+      current++;
+      loadQuestion();
+    }
+
+    function nextQuestion() {
+      current++;
+      loadQuestion();
+    }
+
+    function endQuiz() {
+      clearInterval(countdown);
+      updateProgressBar();
+      document.getElementById("quizContainer").style.display = "none";
+      document.getElementById("resultsModal").style.display = "flex";
+      document.getElementById("scoreDisplay").innerText = score;
+
+      const starsContainer = document.getElementById("starRating");
+      starsContainer.innerHTML = "";
+      const totalStars = 5;
+      const fullParts = Math.floor(score / 3);
+      const remainder = score % 3;
+
+      for (let i = 0; i < totalStars; i++) {
+        const container = document.createElement("div");
+        container.className = "star-container";
+
+        const star = document.createElement("div");
+        star.className = "star";
+        star.innerText = "★";
+
+        const fill = document.createElement("div");
+        fill.className = "star star-fill";
+        fill.innerText = "★";
+
+        if (i < fullParts) {
+          fill.style.width = "100%";
+        } else if (i === fullParts && remainder > 0) {
+          fill.style.width = `${(remainder / 3) * 100}%`;
+        } else {
+          fill.style.width = "0%";
+        }
+
+        container.appendChild(star);
+        container.appendChild(fill);
+        starsContainer.appendChild(container);
+      }
+
+      let stored = JSON.parse(localStorage.getItem("top5") || "[]");
+      stored.push({ name: userName, score });
+      stored.sort((a, b) => b.score - a.score);
+      stored = stored.slice(0, 5);
+      localStorage.setItem("top5", JSON.stringify(stored));
+
+      document.getElementById("topScores").innerHTML = stored.map(s => `<li>${s.name} - ${s.score}</li>`).join('');
+    }
+
+    function resetTopScores() {
+      localStorage.removeItem("top5");
+      document.getElementById("topScores").innerHTML = "";
+    }
+  </script>
+</body>
+</html>
