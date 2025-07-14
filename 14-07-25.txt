@@ -11,6 +11,7 @@ console.log("Hello World");
 </body>
 </html>
 
-2.
+2.external:-
+<script src="script.js"></scipt>
 client-server architecture:
 java script is used.
