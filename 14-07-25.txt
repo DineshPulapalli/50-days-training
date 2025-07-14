@@ -1,0 +1,16 @@
+Javascript:
+Javascript is a high level programming language which is used to dynamically make web pages interactive and user friedly.
+it can be done in two ways:
+1.internal:- which is done within the html itself,using the <scipt> tag.
+ex: <html>
+<head></head>
+<body> 
+<scipt> 
+console.log("Hello World");
+</scipt>
+</body>
+</html>
+
+2.
+client-server architecture:
+java script is used.
