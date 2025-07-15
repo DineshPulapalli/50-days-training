@@ -16,6 +16,29 @@
         }
         let ans=checkEven(7);
         console.log(ans);
+        function CheckNumber(number) {
+            if(number>0){
+                return "Positive";
+
+            }
+            else if(number<0)
+            {
+                return "Negative";
+            }
+            else
+            return "Zero";
+        }
+        console.log(CheckNumber(9));
+        let a=5;
+        let b=76;
+        if(typeof(a)!="number" || typeof(b)!="number"){
+            console.log("Both values must be of the number data type");
+        }
+        else{
+        console.log(a+b);
+        }
+        let light="green";
+        console.log(light=="green"?"Vehicle can go" :(light=="orange"?"slow down your vehicle":(light=="red"?"Stop":"Invalid input")));
     </script>
 </body>
 </html>
