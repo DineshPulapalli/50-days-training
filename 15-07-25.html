@@ -1,44 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function checkEven(num) {
-            if (num%2==0){
-                return "Even";
-            }
-            else
-            return "Odd";
+      function checkEven(num) {
+        if (num % 2 == 0) {
+          return "Even";
+        } else return "Odd";
+      }
+      let ans = checkEven(7);
+      console.log(ans);
+      function CheckNumber(number) {
+        if (number > 0) {
+          return "Positive";
+        } else if (number < 0) {
+          return "Negative";
+        } else return "Zero";
+      }
+      console.log(CheckNumber(9));
+      let a = 5;
+      let b = 76;
+      if (typeof a != "number" || typeof b != "number") {
+        console.log("Both values must be of the number data type");
+      } else {
+        console.log(a + b);
+      }
+      let light = "green";
+      console.log(
+        light == "green"
+          ? "Vehicle can go"
+          : light == "orange"
+          ? "slow down your vehicle"
+          : light == "red"
+          ? "Stop"
+          : "Invalid input"
+      );
+      // logical and
+      let age = 18;
+      if (age >= 18 && age <= 45) {
+        console.log("They are eligible");
+      } else {
+        console.log("They are not eligible");
+      }
+      // logical or
+      let speed = 45;
+      let isDrunk = "no";
+      let hasHelmet = "true";
+      if (speed > 45 || isDrunk != "no" || hasHelmet != "true") {
+        console.log("Catch and impose fine");
+      } else {
+        console.log("Pass through");
+      }
+      //loops
+      // for loop
+      for (let i = 0; i <= 10; i++) {
+        console.log(i + " hi");
+      }
+      // while loop
+      let i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i++;
+      }
+      let n = 5;
+      for (let i = 10 ; i > 0; i--) {
+        console.log(n + " *" + i + " =" + n * i);
+      }
+      // switch case
+      let user="customer";
+      switch (user) {
+        case "customer":
+          console.log("Enter Customer data");
+          break;
+        case "admin":
+          console.log("Allow access to the main controls");
+          break;
+          case "dev":
+            console.log("Open developer access options and give permission authentication");
+          break;
+          default : 
+          console.log("error occured during registration, please re enter the user details.");
+          break;
+      }
+      let month=  2;
+      switch (month) {
+        case 1:
+          console.log("January");
+          break;
+        case 2: 
+          console.log("February");
+          break;  
+        case 3:
+          console.log("March");     
+      break;
+        case 4: 
+          console.log("April");
+          break;    
+        case 5:
+          console.log("May"); 
+          break;  
+        case 6:
+          console.log("June");  
+          break;  
+        case 7:
+          console.log("July");  
+          break;
+        case 8:
+          console.log("August");
+          break;
+        case 9:
+          console.log("September");
+          break;  
+        case 10:
+          console.log("October");   
+          break;
+        case 11:  
+          console.log("November");
+          break;    
+        case 12:  
+          console.log("December");
+          break; 
+        default:
+          console.log("Invalid month number");
+          break;
+      }
+      switch (month) {
+        case 3:
+          case 2:
+          console.log("Spring");
+          break;
+          case 4:
+            case 5:
+              case 6:
+          console.log("Summer");
+          break;
+      case 7:
+        case 8:
+          case 9:
+            console.log("Rainy");
+            break;
+            case 10:
+              case 11:
+                case 12:
+                  case 1:
+                  console.log("Winter");
+                  break;
+        default:
+          console.log("Enter a valid month number");
+          break;
+      }
+      // arrays
+      let arr = new Array(1,2,3);
+      arr.push(55);
+      arr.unshift(99);
+      arr.shift();
+      let ex=["America","a"];
+      for (let c of ex){
+        console.log(c);
+      }
+      // first question
+      function calcuate(num1,num2,op) {
+        switch (op) {
+          case "+":
+            console.log(num1+num2);
+            
+            break;
+          case "-" :
+            console.log(num1-num2);
+            break;
+          case "*":
+            console.log(num1*num2);
+            break;
+          case "/":
+            console.log(num1/num2);
+            break;
+          case "%":
+            console.log(num1%num2);
+          default:
+            console.log("Enter a valid operator");
+            break;
         }
-        let ans=checkEven(7);
-        console.log(ans);
-        function CheckNumber(number) {
-            if(number>0){
-                return "Positive";
+      }
+      // second question
+      function findMax(arr1) {
+        let max=arr1[0];
+        for(let element of arr1){
+           if (element>=max) {
+            max=element;
+           }
+          
+        }
+console.log(max);
 
-            }
-            else if(number<0)
-            {
-                return "Negative";
-            }
-            else
-            return "Zero";
-        }
-        console.log(CheckNumber(9));
-        let a=5;
-        let b=76;
-        if(typeof(a)!="number" || typeof(b)!="number"){
-            console.log("Both values must be of the number data type");
-        }
-        else{
-        console.log(a+b);
-        }
-        let light="green";
-        console.log(light=="green"?"Vehicle can go" :(light=="orange"?"slow down your vehicle":(light=="red"?"Stop":"Invalid input")));
+        
+      }
     </script>
-</body>
+  </body>
 </html>
