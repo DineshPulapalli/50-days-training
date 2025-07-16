@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //OBJECT:- An object is a type of non primitive data type which stores its values in key value pairs. it is better than array when it comes to dividing the values based on their category
-        let student= {
-            name:'Dinesh',
-            age:20,
-            Email:'dinesh@email.com',
-            rollno:1234567890,
-            phoneno:8765432190,
-            gpa:8.0,
-            marks:[12,23,34,145,56],
-            getTotalMarks:function(){
-                let sum=0;
-                for(let i of this.marks){
-                    sum+=i;
-                }
-                return sum;
-            },
-            course:'CSE General',
-            yearOfStudy:3,
-            address:{
-                state:"Telanga",
-                city:"HYderabad",
-                area:"Balanagar,IDPL PO",
-                pincode:"234567"
-            }
-
-
+      //OBJECT:- An object is a type of non primitive data type which stores its values in key value pairs. it is better than array when it comes to dividing the values based on their category
+      let student = {
+        name: "Dinesh",
+        age: 20,
+        Email: "dinesh@email.com",
+        rollno: 1234567890,
+        phoneno: 8765432190,
+        gpa: 8.0,
+        marks: [12, 23, 34, 145, 56],
+        getTotalMarks: function () {
+          let sum = 0;
+          for (let i of this.marks) {
+            sum += i;
+          }
+          return sum;
+        },
+        course: "CSE General",
+        yearOfStudy: 3,
+        address: {
+          state: "Telanga",
+          city: "HYderabad",
+          area: "Balanagar,IDPL PO",
+          pincode: "234567",
+        },
+      };
+      //You can just add new keys by using dot function.
+      // you can also delete the key or even the entire object itself by using delete keyword
+      function getHighest(marks) {
+        let max = marks[0];
+        for (let i of marks) {
+          if (i >= max) {
+            max = i;
+          }
         }
-        //You can just add new keys by using dot function.
-        // you can also delete the key or even the entire object itself by using delete keyword
-        function getHighest(marks) {
-            let max=marks[0];
-            for (let i of marks){
-                if(i>=max){
-                    max=i;
-                }
-            }
-            return max;
+        return max;
+      }
+      console.log("Highest marks are: ", getHighest(student.marks));
+      // one can access the key and key value pairs of an object as follows:
+      let keys = Object.keys(student);
+      let lastKey = keys[keys.length - 1];
+
+      for (let i in student) {
+        console.log(i);
+        if (i == lastKey) {
+          for (let i in student.address) {
+            console.log(i);
+          }
         }
-        console.log("Highest marks are: ",getHighest(student.marks));
+      }
+      // here we used lastkey because we can now expand the last key without manually knoiwing the name.
+      //FUNCTIONS: functions are blocks of code written and stored so as to re use the functions later on instead of  writing the same block repeated.
+      //This the first type of functions is parameterized and named
+      function sayHi(name ="User") {
+        console.log("Hi", name);
+      }
+      sayHi("Dinesh");
+      //Here giving "=User" is called as giving a default value. here i did call with dinesh as an argument, but when i give nothing, instead of giving "<empty string>" it gives the complete statement with the default value in its place
     </script>
-</body>
+  </body>
 </html>
