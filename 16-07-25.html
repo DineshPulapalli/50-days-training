@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //OBJECT:- An object is a type of non primitive data type which stores its values in key value pairs. it is better than array when it comes to dividing the values based on their category
+        let student= {
+            name:'Dinesh',
+            age:20,
+            Email:'dinesh@email.com',
+            rollno:1234567890,
+            phoneno:8765432190,
+            gpa:8.0,
+            marks:[12,23,34,145,56],
+            getTotalMarks:function(){
+                let sum=0;
+                for(let i of this.marks){
+                    sum+=i;
+                }
+                return sum;
+            },
+            course:'CSE General',
+            yearOfStudy:3,
+            address:{
+                state:"Telanga",
+                city:"HYderabad",
+                area:"Balanagar,IDPL PO",
+                pincode:"234567"
+            }
+
+
+        }
+        //You can just add new keys by using dot function.
+        // you can also delete the key or even the entire object itself by using delete keyword
+        function getHighest(marks) {
+            let max=marks[0];
+            for (let i of marks){
+                if(i>=max){
+                    max=i;
+                }
+            }
+            return max;
+        }
+        console.log("Highest marks are: ",getHighest(student.marks));
+    </script>
+</body>
+</html>
