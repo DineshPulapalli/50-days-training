@@ -47,12 +47,12 @@
       // one can access the key and key value pairs of an object as follows:
       let keys = Object.keys(student);
       let lastKey = keys[keys.length - 1];
-
+      let lastValue = student[lastKey];
       for (let i in student) {
         console.log(i);
         if (i == lastKey) {
-          for (let i in student.address) {
-            console.log(i);
+          for (let i in lastValue) {
+            console.log(i, lastValue[i]);
           }
         }
       }
@@ -64,6 +64,16 @@
       }
       sayHi("Dinesh");
       //Here giving "=User" is called as giving a default value. here i did call with dinesh as an argument, but when i give nothing, instead of giving "<empty string>" it gives the complete statement with the default value in its place
+      //Anonymous functions are those functions which dont need a name. they are stored within a variable and can even be used as a parameter
+      let func = function (a = 0, b = 0) {
+        return a + b;
+      };
+      // arrow functions
+      let myfunc = (a, b) => {
+        return a + b;
+      };
+      let afunc = (a, b) => a + b;
+      //ASYNCHRONOUS JS :it is a type of execution in which when one block of code is taking time ,it is sent to WebApi from the original call stack where it waits for the time given . in this time the remaining code executes and continues forward. after the wait time is over, it is then sent to the callBack queue and from there they are directed back into the call stack and finally executed.
     </script>
   </body>
 </html>
