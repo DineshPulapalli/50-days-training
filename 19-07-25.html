@@ -6,28 +6,54 @@
     <title>Document</title>
     <style>
       * {
+        
         margin: 10 px;
         padding: 10 px;
         box-sizing: border-box;
       }
-      body
-      {
+      body {
         font-family: Arial, Helvetica, sans-serif;
-       
+
         align-items: center;
         width: 10vw;
         height: 10vw;
-       
+      }
+      #reset{
+        margin-left: 10px;
+      }
+      #count{
+        margin-left: 70px;
+         font-size: 50px;
+        
       }
     </style>
   </head>
   <body>
-   <h2></h2>
+    <h2></h2>
     <h1 id="count">0</h1>
     <div class="btn-div">
       <button class="btn" id="inc-btn" onclick="increment()">increment</button>
       <button class="btn" id="dec-btn" onclick="decrement()">decrement</button>
     </div>
-    <button class="player">Click Here</button>
+    <button class="btn" id="reset" onclick="reset()">Click Here To Reset</button>
+    
   </body>
+  <script>
+    let count = 0;
+    function increment() {
+      count++;
+      let a = document.getElementById("count");
+      a.innerText = count;
+    }
+    function decrement() {
+      count--;
+      let a = document.getElementById("count");
+      a.innerText = count;
+    }
+    function reset() {
+      count=0;
+      let a = document.getElementById("count");
+      a.innerText = count;
+    }
+  </script>
 </html>
