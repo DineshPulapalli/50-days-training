@@ -1,3 +1,4 @@
+let text_input=document.getElementById("textInput")
 let color_input=document.getElementById("bgColorInput")
 let font_input=document.getElementById("fontColorInput")
 let font_size=document.getElementById("fontSizeInput")
@@ -6,6 +7,7 @@ let padding_input=document.getElementById("paddingInput")
 let border_radius_input=document.getElementById("borderRadiusInput")
 let custom_button=document.getElementById("customButton")
 function applly() {
+    let text_input_value=text_input.value;
     let color_value=color_input.value;
     let font_value=font_input.value;
     let font_size_value=font_size.value;
@@ -13,6 +15,7 @@ function applly() {
     let padding_input_value=padding_input.value;
     let border_radius_input_value=border_radius_input.value;
     
+    custom_button.textContent=text_input_value;
     custom_button.style.backgroundColor=color_value;
     custom_button.style.color=font_value;
     custom_button.style.fontSize=font_size_value;
