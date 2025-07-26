@@ -1,2 +1,0 @@
-UI Flutter:
-Flutter is an application used to develope device independent and language independent interfaces.`
