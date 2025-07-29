@@ -1,0 +1,7 @@
+Event Listeners:
+events happen all the time when you interact with the html elements of the website.
+these events will be tracked and produce the required output.we use event Listeners in buttons and other methods.
+there are three types of these event Listeners:
+1-inline event Listeners - Uses onclick in html in the button tag, then access the onclick name as the function in javascript. the code in javascript will be executed if the button is pressed
+2-on event Listeners- same as first,  but here we use onclick in js file itself and give the function there itself as well.
+3-add event Listeners-
