@@ -4,3 +4,13 @@ WEDNESDY AND THURSDAY:
  AI
 FRIDAY AND SATURDAY:
  DevOps
+UI-Flutter syllabus:
+week 1:
+a)install Flutter and dart SDK
+b)write a simple dart program to understand the language basics
+week 2:
+a)explore various Flutter widgets(text,image,container,etc)
+b)implement various layout strctures using row,column and stack widgets
+week 3:
+a) design a responsive UI that adapts to various screen sizes
+b)implement media quries and breakpoints for responsiveness.

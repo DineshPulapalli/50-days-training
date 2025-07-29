@@ -1,10 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Inline JS Example</title>
   </head>
   <body>
-    <h1>Inline JavaScript</h1>
+    <!-- <h1>Inline JavaScript</h1>
     <button onclick="alert('Inviting you to the javascript project!')">
       Click Me</button
     ><br /><br />
@@ -104,5 +104,80 @@
         showMessage(greet,'dinesh');
       
     </script>
+     <script>
+      function displayGreeting(displayName) {
+        console.log("Hello")
+        displayName();
+        console.log("Good Morning")
+      }
+      displayGreeting(function () {
+        console.log("Dinesh")
+        
+      })
+      function displayGreeting(displayName) {
+        console.log("Hello")
+        displayName();
+        console.log("Good Morning")
+      } 
+    <script>
+      function displayGreeting(displayName) {
+        console.log("Hello")
+        displayName();
+        console.log("Good Morning")
+      }
+      function displayDinesh() {
+        console.log("Dinesh")
+      }
+      displayGreeting(displayDinesh)
+      //function name as a parameter
+   <script>
+    function displayGreeting(displayName) {
+        console.log("Hello")
+        displayName();
+        console.log("Good Morning")
+      }
+      let displayDinesh=function(){
+        console.log("Dinesh")
+      }
+      displayGreeting(displayDinesh)
+      //using a variable.
+    <button id="setIntervalBtn">
+    Set Interval
+   </button>
+   <button id="clearIntervalBtn">
+    Clear Interval
+   </button>
+   <script>
+    let set_interval=document.getElementById("setIntervalBtn")
+    let clear_interval=document.getElementById("clearIntervalBtn")
+    let uniqueId=null;
+    set_interval.onclick=function(){
+    let counter=0;
+    uniqueId=setInterval(function() {
+    console.log(counter);
+    counter=counter+1
+    }, 1000);
+    }
+    clear_interval.onclick=function(){
+clearInterval(uniqueId)
+console.log("Interval cleared")
+    } -->
+    <!-- <button id="greeting">Greet</button>
+    <script>
+      let greetBtn = document.getElementById("greeting");
+    greetBtn.addEventListener("click",function(){
+      console.log("HELLO!!")
+    }) 
+  <script>
+    let inputElement=document.createElement("input");
+function printKeydown(event) {
+  console.log(event.key)
+}
+inputElement.addEventListener("keydown",printKeydown)
+document.body.appendChild(inputElement)-->
+
+<script> 
+  
+</script>
   </body>
 </html>
