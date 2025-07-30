@@ -161,8 +161,8 @@
     clear_interval.onclick=function(){
 clearInterval(uniqueId)
 console.log("Interval cleared")
-    } -->
-    <!-- <button id="greeting">Greet</button>
+    } 
+     <button id="greeting">Greet</button>
     <script>
       let greetBtn = document.getElementById("greeting");
     greetBtn.addEventListener("click",function(){
@@ -174,10 +174,77 @@ function printKeydown(event) {
   console.log(event.key)
 }
 inputElement.addEventListener("keydown",printKeydown)
-document.body.appendChild(inputElement)-->
-
-<script> 
+document.body.appendChild(inputElement)
+//spread operartor
+let array1=[2,3];
+let array2=[1,...array1,5];
+console.log(array1);
+console.log(array2);
+let array1=[2,3];
+let array2=[4,5];
+let name="Dinesh"
+let obj={
+  age:10,
+  name:"Rahul"
+}
+let address={
+  city:"Hyd",
+  state:"Telangana"
+}
+let person={...obj,...address}
+console.log(person)
+let array3=[...array1,...array2,...name]
+console.log(array1);
+console.log(array2);
+console.log(array3);
+function add(a,b,c) {
+  return a+b+c;
+  }
+  let numbers=[1,2,3,4,5]
+  console.log(add(...numbers))
+  add(2,3,5)
+  //rest Operator
   
-</script>
+  function add(a,b,...rest) {
+    console.log(rest)
+    console.log(a)
+    console.log(b)
+  }
+  add(2,3,5,8,9)
+  function numbers(...args){
+    console.log(args)
+  }
+  numbers(1,2,3)
+  let result=0;
+  for(let arg of args){
+    function sum(...args){
+      result=result+arg;
+      console.log(result)
+      }
+
+      }
+      
+      (sum(1,2,3,4,5,6))
+      sum(9,8,7)
+      //Array detructuring
+      let [a,b,c,...rest]=[1,2,3,4,5,6,7];
+      console.log(a,b,c,rest)
+      //Object destructuring
+      let {name,age,city,...rest}={
+        name:"Dinesh",
+        age:23,
+        city:"Hyd"
+      };
+      console.log(name,age)
+      console.log(rest)
+      //template literals
+      let firstName="Rahul"
+      console.log(`Hello ${firstName}`)-->
+    <script>
+      let sum=a=>a*a;
+      console.log(sum(1))
+      console.log(sum(10))
+    </script>
   </body>
 </html>
+ 
