@@ -5,173 +5,173 @@
   </head>
   <body>
     <!-- <h1>Inline JavaScript</h1>
-    <button onclick="alert('Inviting you to the javascript project!')">
-      Click Me</button
-    ><br /><br />
+<button onclick="alert('Inviting you to the javascript project!')">
+Click Me</button
+><br /><br />
 
-    <script>
-      console.log("this is javascript code");
-      let a = 5;
-      let b = 10;
-      let sum = a + b;
-      let mul = a * b;
-      let div = a / b;
-      document.write("The sum of " + a + " and " + b + " is: " + sum + "<br>");
-      document.write("The mul of " + a + " and " + b + " is: " + mul + "<br>");
-      document.write("The div of " + a + " and " + b + " is: " + div + "<br>");
-    </script>
-    <script>
-      let ac = "String";
-      let age = 12;
-      let good = true;
-      let big = 12345678998765432;
-      document.write("ac is" + ac + "<br>");
-      document.write("age is" + age + "<br>");
-      document.write("goood is" + good + "<br>");
-      document.write("big is" + big + "<br>");
-    </script>
-    <script>
-      let p = 200000;
-      let t = 3;
-      let r = 2;
-      let interest = (p * t * r) / 100;
-      document.writeln("interest is:" + interest + "<br>");
-    </script>
-    <script>
-      function square(num) {
-        return num * num;
-      }
-      let result1 = square(5);
-      document.writeln("Square of 5 is:" + result1 + "<br>");
-    </script>
-    <script>
-      function greet(name) {
-        return "Hello " + name + "!";
-      }
-      let result2 = greet("dinesh");
-      document.write(result2 + "<br>");
+<script>
+console.log("this is javascript code");
+let a = 5;
+let b = 10;
+let sum = a + b;
+let mul = a * b;
+let div = a / b;
+document.write("The sum of " + a + " and " + b + " is: " + sum + "<br>");
+document.write("The mul of " + a + " and " + b + " is: " + mul + "<br>");
+document.write("The div of " + a + " and " + b + " is: " + div + "<br>");
+</script>
+<script>
+let ac = "String";
+let age = 12;
+let good = true;
+let big = 12345678998765432;
+document.write("ac is" + ac + "<br>");
+document.write("age is" + age + "<br>");
+document.write("goood is" + good + "<br>");
+document.write("big is" + big + "<br>");
+</script>
+<script>
+let p = 200000;
+let t = 3;
+let r = 2;
+let interest = (p * t * r) / 100;
+document.writeln("interest is:" + interest + "<br>");
+</script>
+<script>
+function square(num) {
+return num * num;
+}
+let result1 = square(5);
+document.writeln("Square of 5 is:" + result1 + "<br>");
+</script>
+<script>
+function greet(name) {
+return "Hello " + name + "!";
+}
+let result2 = greet("dinesh");
+document.write(result2 + "<br>");
 
-      function isEven(n) {
-        return n % 2 == 0;
-      }
-      let result3 = isEven(9);
-      document.writeln("is 9 an even number?" + result3 + "<br>");
-      function getColors() {
-        return ["Red", "Green", "Blue"];
-      }
-      let result4 = getColors();
-      document.write("colors: " + result4.join(", ") + "<br>");
-      function getPerson(n) {
-        return { name: "Dinesh", age: 20 };
-      }
-      let result5 = getPerson();
-      document.writeln("name: " + result5.name + "<br>" + result5.age);
-      let now = new Date();
-      let fullDate = now.toDateString();
-      let fullTime = now.toLocaleTimeString();
-      console.log(fullDate, fullTime);
-      function Person(name, age) {
-        this.name = name;
-        this.age = age;
-      }
-      this.greet = function () {
-        return (
-          "Hello my name is  " + this.name + "and i am " + this.age + "old"
-        );
-      };
-      let person1 = new Person("divya", 22);
-      let person2 = new Person("Raaji", 25);
-      document.writeln(person1.greet() + "<br>");
-      document.writeln(person2.greet() + "<br>");
+function isEven(n) {
+return n % 2 == 0;
+}
+let result3 = isEven(9);
+document.writeln("is 9 an even number?" + result3 + "<br>");
+function getColors() {
+return ["Red", "Green", "Blue"];
+}
+let result4 = getColors();
+document.write("colors: " + result4.join(", ") + "<br>");
+function getPerson(n) {
+return { name: "Dinesh", age: 20 };
+}
+let result5 = getPerson();
+document.writeln("name: " + result5.name + "<br>" + result5.age);
+let now = new Date();
+let fullDate = now.toDateString();
+let fullTime = now.toLocaleTimeString();
+console.log(fullDate, fullTime);
+function Person(name, age) {
+this.name = name;
+this.age = age;
+}
+this.greet = function () {
+return (
+"Hello my name is  " + this.name + "and i am " + this.age + "old"
+);
+};
+let person1 = new Person("divya", 22);
+let person2 = new Person("Raaji", 25);
+document.writeln(person1.greet() + "<br>");
+document.writeln(person2.greet() + "<br>");
 
-      let text = "Hello World!";
-      let pattern = /hello/i;
-      let result = pattern.test(text);
-      document.writeln(
-        result
-          ? "Match found:'hello' is in the text.<br>"
-          : "No match found for 'hello'.<br>"
-      );
-    </script>
-    <script>
-      function greet(name){
-        return "Welcome "+ name+" !";
-      }
-        function showMessage(callBackFunction,userName) {
-          let message=callBackFunction(userName);
-          document.writeln(message);
-        }
-        showMessage(greet,'dinesh');
-      
-    </script>
-     <script>
-      function displayGreeting(displayName) {
-        console.log("Hello")
-        displayName();
-        console.log("Good Morning")
-      }
-      displayGreeting(function () {
-        console.log("Dinesh")
-        
-      })
-      function displayGreeting(displayName) {
-        console.log("Hello")
-        displayName();
-        console.log("Good Morning")
-      } 
-    <script>
-      function displayGreeting(displayName) {
-        console.log("Hello")
-        displayName();
-        console.log("Good Morning")
-      }
-      function displayDinesh() {
-        console.log("Dinesh")
-      }
-      displayGreeting(displayDinesh)
-      //function name as a parameter
-   <script>
-    function displayGreeting(displayName) {
-        console.log("Hello")
-        displayName();
-        console.log("Good Morning")
-      }
-      let displayDinesh=function(){
-        console.log("Dinesh")
-      }
-      displayGreeting(displayDinesh)
-      //using a variable.
-    <button id="setIntervalBtn">
-    Set Interval
-   </button>
-   <button id="clearIntervalBtn">
-    Clear Interval
-   </button>
-   <script>
-    let set_interval=document.getElementById("setIntervalBtn")
-    let clear_interval=document.getElementById("clearIntervalBtn")
-    let uniqueId=null;
-    set_interval.onclick=function(){
-    let counter=0;
-    uniqueId=setInterval(function() {
-    console.log(counter);
-    counter=counter+1
-    }, 1000);
-    }
-    clear_interval.onclick=function(){
+let text = "Hello World!";
+let pattern = /hello/i;
+let result = pattern.test(text);
+document.writeln(
+result
+? "Match found:'hello' is in the text.<br>"
+: "No match found for 'hello'.<br>"
+);
+</script>
+<script>
+function greet(name){
+return "Welcome "+ name+" !";
+}
+function showMessage(callBackFunction,userName) {
+let message=callBackFunction(userName);
+document.writeln(message);
+}
+showMessage(greet,'dinesh');
+
+</script>
+<script>
+function displayGreeting(displayName) {
+console.log("Hello")
+displayName();
+console.log("Good Morning")
+}
+displayGreeting(function () {
+console.log("Dinesh")
+
+})
+function displayGreeting(displayName) {
+console.log("Hello")
+displayName();
+console.log("Good Morning")
+} 
+<script>
+function displayGreeting(displayName) {
+console.log("Hello")
+displayName();
+console.log("Good Morning")
+}
+function displayDinesh() {
+console.log("Dinesh")
+}
+displayGreeting(displayDinesh)
+//function name as a parameter
+<script>
+function displayGreeting(displayName) {
+console.log("Hello")
+displayName();
+console.log("Good Morning")
+}
+let displayDinesh=function(){
+console.log("Dinesh")
+}
+displayGreeting(displayDinesh)
+//using a variable.
+<button id="setIntervalBtn">
+Set Interval
+</button>
+<button id="clearIntervalBtn">
+Clear Interval
+</button>
+<script>
+let set_interval=document.getElementById("setIntervalBtn")
+let clear_interval=document.getElementById("clearIntervalBtn")
+let uniqueId=null;
+set_interval.onclick=function(){
+let counter=0;
+uniqueId=setInterval(function() {
+console.log(counter);
+counter=counter+1
+}, 1000);
+}
+clear_interval.onclick=function(){
 clearInterval(uniqueId)
 console.log("Interval cleared")
-    } 
-     <button id="greeting">Greet</button>
-    <script>
-      let greetBtn = document.getElementById("greeting");
-    greetBtn.addEventListener("click",function(){
-      console.log("HELLO!!")
-    }) 
-  <script>
-    let inputElement=document.createElement("input");
+} 
+<button id="greeting">Greet</button>
+<script>
+let greetBtn = document.getElementById("greeting");
+greetBtn.addEventListener("click",function(){
+console.log("HELLO!!")
+}) 
+<script>
+let inputElement=document.createElement("input");
 function printKeydown(event) {
-  console.log(event.key)
+console.log(event.key)
 }
 inputElement.addEventListener("keydown",printKeydown)
 document.body.appendChild(inputElement)
@@ -184,12 +184,12 @@ let array1=[2,3];
 let array2=[4,5];
 let name="Dinesh"
 let obj={
-  age:10,
-  name:"Rahul"
+age:10,
+name:"Rahul"
 }
 let address={
-  city:"Hyd",
-  state:"Telangana"
+city:"Hyd",
+state:"Telangana"
 }
 let person={...obj,...address}
 console.log(person)
@@ -198,53 +198,102 @@ console.log(array1);
 console.log(array2);
 console.log(array3);
 function add(a,b,c) {
-  return a+b+c;
-  }
-  let numbers=[1,2,3,4,5]
-  console.log(add(...numbers))
-  add(2,3,5)
-  //rest Operator
-  
-  function add(a,b,...rest) {
-    console.log(rest)
-    console.log(a)
-    console.log(b)
-  }
-  add(2,3,5,8,9)
-  function numbers(...args){
-    console.log(args)
-  }
-  numbers(1,2,3)
-  let result=0;
-  for(let arg of args){
-    function sum(...args){
-      result=result+arg;
-      console.log(result)
-      }
+return a+b+c;
+}
+let numbers=[1,2,3,4,5]
+console.log(add(...numbers))
+add(2,3,5)
+//rest Operator
 
-      }
-      
-      (sum(1,2,3,4,5,6))
-      sum(9,8,7)
-      //Array detructuring
-      let [a,b,c,...rest]=[1,2,3,4,5,6,7];
-      console.log(a,b,c,rest)
-      //Object destructuring
-      let {name,age,city,...rest}={
-        name:"Dinesh",
-        age:23,
-        city:"Hyd"
-      };
-      console.log(name,age)
-      console.log(rest)
-      //template literals
-      let firstName="Rahul"
-      console.log(`Hello ${firstName}`)-->
+function add(a,b,...rest) {
+console.log(rest)
+console.log(a)
+console.log(b)
+}
+add(2,3,5,8,9)
+function numbers(...args){
+console.log(args)
+}
+numbers(1,2,3)
+let result=0;
+for(let arg of args){
+function sum(...args){
+result=result+arg;
+console.log(result)
+}
+
+}
+
+(sum(1,2,3,4,5,6))
+sum(9,8,7)
+//Array detructuring
+let [a,b,c,...rest]=[1,2,3,4,5,6,7];
+console.log(a,b,c,rest)
+//Object destructuring
+let {name,age,city,...rest}={
+name:"Dinesh",
+age:23,
+city:"Hyd"
+};
+console.log(name,age)
+console.log(rest)
+//template literals
+let firstName="Rahul"
+console.log(`Hello ${firstName}`)
+let sum=a=>a*a;
+console.log(sum(1))
+console.log(sum(10))
+function createCar(color, brand) {
+return {
+color,
+brand,
+start() {
+console.log("Started");
+},
+};
+}
+let car1=createCar("green","BMW")
+console.log(car1)
+function Car(color,brand){
+this.color=color,
+this.brand=brand,
+this.start=function(){
+console.log("Started")
+}
+}
+let car1=new Car("green","BMW")
+console.log(typeof(car1))
+let now=new Date(2005,2,28,9,30,15);
+console.log(now.getFullYear(),now.getMonth())
+console.log(typeof(now.getFullYear()))
+alert("Hello")
+alert("Hello1")
+alert("Hello2")
+const url = "https://apis.ccbp.in/jokes/random";
+fetch(url) 
+.then((Response) => {
+return Response.json();                  
+})
+.then((jsonData) => {
+console.log(jsonData);
+});
+console.log("Fetching data");-->
     <script>
-      let sum=a=>a*a;
-      console.log(sum(1))
-      console.log(sum(10))
+      function bookTrain(ticket) {
+        return new Promise((resolve, reject) => {
+          console.log("Processing!...");
+          setTimeout(() => {
+            if (ticket) {
+              resolve("Ticket Booking successful!Seat number is "+Math.ceil(Math.random()*100));
+            } else {
+              reject("Please Mention 'true' if u want a Train seat Booking"); 
+            }
+          }, 5000);
+        });
+      }
+      bookTrain(true)
+        .then((msg) => console.log(msg)) 
+        .catch((err) => console.log(err));
     </script>
   </body>
 </html>
- 
