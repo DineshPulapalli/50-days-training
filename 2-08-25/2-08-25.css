@@ -1,0 +1,30 @@
+.food-munch-logo{
+    height: 70px;
+    width: 80px;
+}
+#navItem1{
+color: #323f4b;
+font-family: "Tahoma";
+}
+#navItem2{
+color: #323f4b;
+font-family: "Tahoma";
+}
+#navItem3{
+color: #323f4b;
+font-family: "Tahoma";
+}
+#navItem4{
+color: #323f4b;
+font-family: "Tahoma";
+}
+.banner-section-bg-contain{
+    background-image: url("https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png");
+    height: 100vh;
+    background-size: cover;
+}
+.banner-heading{
+    color: white;
+    font-family: "Tahoma";
+    font-weight: 300;
+}
