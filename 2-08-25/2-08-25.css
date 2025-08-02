@@ -18,7 +18,7 @@ font-family: "Tahoma";
 color: #323f4b;
 font-family: "Tahoma";
 }
-.banner-section-bg-contain{
+.banner-section-bg-container{
     background-image: url("https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png");
     height: 100vh;
     background-size: cover;
@@ -27,4 +27,34 @@ font-family: "Tahoma";
     color: white;
     font-family: "Tahoma";
     font-weight: 300;
+}
+.banner-caption{
+    color: #f5faf6;
+    font-family: "Tahoma";
+    font-size: 24px;
+    font-weight: 300;
+}
+.custom-button{
+    color: white;
+    background-color: #d0b200;
+    border-radius: 8px;
+    height: 45px;
+    width: 135px;
+    border-width: 0px;
+    margin-right: 10px;
+
+}
+.custom-outline-button{
+    height: 45px;
+    width: 135px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #d0b200;
+    border-width: 1px;
+    border-color: #d0b200;
+    border-style: solid;
+
+}
+.wcu-bg-container{
+    background-color: #f9fefb;
 }
