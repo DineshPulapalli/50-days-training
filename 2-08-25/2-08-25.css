@@ -57,4 +57,45 @@ font-family: "Tahoma";
 }
 .wcu-bg-container{
     background-color: #f9fefb;
+    padding: 15px 0;
+}
+.wcu-section-heading{
+font-family: "Tahoma";
+font-size: 28px;
+font-weight: 700;
+color: #183b56;
+} 
+.wcu-section-description{
+    font-family: "Tahoma";
+    font-size: 16px;
+    font-weight: 700;
+    color: #5a7184;
+}
+.wcu-card{
+    background-color: white;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    border-color: #e5eaf4;
+}
+.wcu-card-image{
+    height: 90px;
+    width: 85px;
+}
+.wcu-card-title{
+    font-family: "Tahoma";
+    color: #323f4b;
+    font-weight: 500;
+    font-size: 22px;
+}
+.wcu-card-description{
+    color: #7b8794;
+    font-family: "Tahoma";
+    font-size: 16px;
+}
+.wcu-span{
+    color: black;
+    font-weight: 700;
+    font-style: italic;
 }
