@@ -99,3 +99,53 @@ color: #183b56;
     font-weight: 700;
     font-style: italic;
 }
+.explore-menu-section{
+    background-color: white;
+}
+.explore-menu-heading{
+    font-family: "Tahoma";
+    font-size: 28px;
+    font-weight: 700;
+    color: #183b56;
+
+}
+.menu-item-image{
+    border-radius: 16px;
+    height: 304px;
+    width: 290px;
+}
+.menu-card-title{
+     font-family: "Tahoma";
+    font-size: 18px;
+    font-weight: 500;
+    color: #323f4b;
+    margin-top: 24px;
+
+}
+.menu-item-link{
+    font-family: "Tahoma";
+    color: #d0b200;
+    font-weight: 500;
+}
+.menu-item-card{
+    border-radius: 26px;
+    
+}
+.healthy-food-section{
+    background-color: #f9fefb;
+}
+.healthy-food-section-image{
+    width: 270px;
+
+}
+.healthy-food-section-heading{
+    font-family: "Tahoma";
+    color: #183b56;
+    font-size: 26px;
+    font-weight: 700;
+}
+.healthy-food-section-description{
+    color: #5a7184;
+    font-family: "Tahoma";
+    font-size: 16px;
+}
