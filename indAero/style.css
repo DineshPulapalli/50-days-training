@@ -1,0 +1,147 @@
+/* Custom styles for better aesthetics */
+body {
+    font-family: 'Inter', sans-serif;
+    /* The background color is now applied via Tailwind class in the body tag */
+}
+
+/* Style for the dropdown transition */
+.dropdown-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+    /* --- Basic Reset & Setup --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFDAB9;
+            color: #222222;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Header / Navigation Bar --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background-color: rgba(26, 36, 47, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-radius: 18px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        .nav-left, .nav-right, .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* space between items */
+        }
+
+        .nav-logo svg {
+            width: 112px;
+            height: 32px;
+        }
+
+        .nav-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-right img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            color: #adb5bd;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .search-btn:hover {
+            color: #ffffff;
+        }
+        
+        .mobile-menu-toggle {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #6c757d;
+            margin-top: auto;
+        }
+        .footer-logo svg {
+             width: 96px;
+             height: 28px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        .footer-links a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+        .footer-copyright {
+            font-size: 0.875rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide desktop nav links */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: #1a242f;
+                padding: 1rem;
+            }
+            .nav-links.active {
+                display: flex; /* Show when active */
+            }
+            .mobile-menu-toggle {
+                display: block; /* Show hamburger icon */
+            }
+        }
